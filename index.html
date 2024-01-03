@@ -23,8 +23,68 @@
                 <h1>Hi, I'm <span>Oatile Mdlela</span>.<br>Welcome to my world!</h1>
             </div>
         </div>
-
     </div>
+    <!--about section-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/about.JPG">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Hello, I am Oatile Mdlela, a dedicated Full Stack Developer specializing in Cloud and Software Development. I am committed to continuous learning and thrive on exploring innovative avenues to enhance my knowledge and skills regularly.
+                        My proficiency extends to a robust understanding of Object-Oriented Programming (OOP) concepts, Software Development Life Cycle (SDLC), and expertise in data structures and algorithms. 
+                        With a fervent commitment to professional growth, I am poised to contribute my abilities towards advancing the objectives of your business.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('tech-stack')">Tech Stack</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="tech-stack">
+                        <ul>
+                            <li><span>Web Development</span><br>C#, .NET, HTML, CSS, JavaScript, Angular, Node.js, Express.js</li>
+                            <li><span>Android Development</span><br>Kotlin, Java </li>
+                            <li><span>Database Management</span><br> MongoDB, Microsoft SQL Server Management Studio (SSMS), MySQL</li>
+                            <li><span>Cloud Computing</span><br>Amazon Web Services, Microsoft Azure Services </li>
+                            <li><span>Version Control</span><br>Git, Github, Gitbash, Azure DevOps </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021-2023</span><br>Bachelors Degree in Computer and Information Science in Application Development received from the IIE Varsity College Waterfall</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Solvyng.io</span><br>Built a serverless archiving web app using AWS Services, HTML, CSS & JavaScript</li>
+                            <li><span>IIE Varsity College School of IT Hackathon 2023</span><br>Developed a mobile application in Kotlin that allowed SASSA Grant receivers to manage their money better.
+                                 Developed an ASP.NET CORE WEB API to Scrape data from the SASSA Website e.g Registration Forms etc.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
     
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
 </html>
