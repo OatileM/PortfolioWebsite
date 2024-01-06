@@ -6,19 +6,22 @@
     <title>Oatile Mdlela Portfolio</title>
     <link rel="stylesheet" href="style.css"> 
     <script src="https://kit.fontawesome.com/ade0fe6395.js" crossorigin="anonymous"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 <body>
     <div id="header">
         <div class="contain">
             <nav>
                 <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact Me</a></li>
+                <ul id="sidemenu">
+                    <li><a href="header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Full Stack Developer</p>
@@ -71,7 +74,6 @@
             </div>
         </div>
     </div>
-
     <!--services section-->
     <div id="services">
         <div class="container">
@@ -99,7 +101,7 @@
         </div>
     </div>
    <!--projects section-->
-   <div id=projects"">
+   <div id="projects">
     <div class="container">
         <h1 class="sub-title">My Projects</h1>
         <div class="work-list">
@@ -131,8 +133,32 @@
         <a href="#" class="btn">See more</a>
     </div>
    </div>
-
-    
+   <!--contact  section-->
+   <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i> osmdlel@gmail.com</p>
+                <p><i class="fa-solid fa-mobile-screen-button"></i> 0614783436</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/oatile-mdlela-b18278272/"><i class="fa-brands fa-linkedin"></i></i></a>
+                    <a href="https://www.instagram.com/bouzer_za/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/OatileM"><i class="fa-brands fa-github"></i></i></a>
+                </div>
+                <a href="images/Oatile Mdlela CV.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+   </div>
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
@@ -148,5 +174,53 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0"; 
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px"; 
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw7HFj0HrVpv4R-7VQi5adJ398e2pUZny8hTmLqpVt8RZk1mFPn3x7uCf-Shz9fm_vG/exec';
+    const form = document.forms['submit-to-google-sheet'];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(data => {
+                Swal.fire({
+                    title: "Submitted!",
+                    text: "Form has been successfully sent!",
+                    icon: "success"
+                });
+                form.reset();
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Form was not sent!",
+                    icon: "error"
+                });
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    });
+</script>
+
+
 </body>
 </html>
