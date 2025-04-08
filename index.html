@@ -9,8 +9,9 @@
     <script src="sweetalert2.all.min.js"></script>
 </head>
 <body>
+    <div class="background-animation"></div>
     <div id="header">
-        <div class="contain">
+        <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
                 <ul id="sidemenu">
@@ -24,8 +25,12 @@
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <p>Full Stack Developer</p>
-                <h1>Hi, I'm <span>Oatile Mdlela</span>.<br>Welcome to my world!</h1>
+                <div class="text-content">
+                    <p>Junior Software Engineer</p>
+                    <h1>Hi, I'm <span>Oatile Mdlela</span>.<br>Welcome to my world!</h1>
+                </div><div class="profile-image">
+                    <img src="images/background.png" alt="Oatile Mdlela">
+                </div>
             </div>
         </div>
     </div>
@@ -39,36 +44,77 @@
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
                     <p>
-                        Hello, I am Oatile Mdlela, a dedicated Full Stack Developer specializing in Cloud and Software Development. I am committed to continuous learning and thrive on exploring innovative avenues to enhance my knowledge and skills regularly.
-                        My proficiency extends to a robust understanding of Object-Oriented Programming (OOP) concepts, Software Development Life Cycle (SDLC), and expertise in data structures and algorithms. 
-                        With a fervent commitment to professional growth, I am poised to contribute my abilities towards advancing the objectives of your business.
-                    </p>
+                        Dedicated Software Engineer with a strong foundation in software development and testing. Proven expertise in cloud technologies, particularly AWS and Microsoft Azure, and a solid grasp of object-oriented programming principles. Skilled in front-end and back-end development, with a passion for crafting efficient and reliable solutions. Seeking a Junior Developer role to leverage my technical skills and contribute to innovative projects.
+                     </p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('tech-stack')">Tech Stack</p>
                         <p class="tab-links" onclick="opentab('education')">Education</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
                     </div>
                     <div class="tab-contents active-tab" id="tech-stack">
                         <ul>
-                            <li><span>Web Development</span><br>C#, .NET, HTML, CSS, JavaScript, Angular, Node.js, Express.js</li>
-                            <li><span>Android Development</span><br>Kotlin, Java </li>
-                            <li><span>Database Management</span><br> MongoDB, Microsoft SQL Server Management Studio (SSMS), MySQL</li>
-                            <li><span>Cloud Computing</span><br>Amazon Web Services, Microsoft Azure Services </li>
-                            <li><span>Version Control</span><br>Git, Github, Gitbash, Azure DevOps </li>
+                            <li><span>Programming Languages</span><br>C#, Java, Python, HTML, CSS, JavaScript, Kotlin, TypeScript, SQL</li>
+                            <li><span>Frameworks & Libraries</span><br>NET, Angular, React, Node.js, Express.js, ASP.NET,  ASP.NET  Core, NUnit, xUnit</li>
+                            <li><span>Database Management</span><br>MongoDB, Microsoft SQL Server, MySQL, Oracle Database, PostgreSQL</li>
+                            <li><span>Operating Systems</span><br>Windows, Linux</li>
+                            <li><span>Cloud Services</span><br>Amazon Web Services, Microsoft Azure, Huawei Cloud </li>
+                            <li><span>Developer Tools</span><br>VS Code, Visual Studio, Android Studio, Git, Git Bash, GitHub</li>
+                            <li><span>Containerization & Orchestration</span><br>Docker, Kubernetes</li>
+                            <li><span>Testing Tools</span><br>Selenium, Postman, NUnit, xUnit, WCF Test Client</li>
+                            <li><span>Testing Types</span><br>Unit Testing, Integration Testing, Functional Testing, Regression Testing</li>
+                            <li><span>Security</span><br>JWT Authentication, OAuth, HTTPS, Role-Based Access Control (RBAC), Password Hashing</li>
+                            <li><span>Web Services</span><br>REST API, RESTful API, WCF (Windows Communication Foundation)</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2021-2023</span><br>Bachelors Degree in Computer and Information Science in Application Development received from the IIE Varsity College Waterfall</li>
+                            <li><span>2021-2023</span><br>BSc in Computer and Information Science in Application Development || IIE Varsity College Waterfall</li>
+                            <li><span>2025-2026</span><br>BSc Honours in Computing || University of South Africa </li>
+
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>Solvyng.io</span><br>Built a serverless archiving web app using AWS Services, HTML, CSS & JavaScript</li>
-                            <li><span>IIE Varsity College School of IT Hackathon 2023</span><br>Developed a mobile application in Kotlin that allowed SASSA Grant receivers to manage their money better.
-                                 Developed an ASP.NET CORE WEB API to Scrape data from the SASSA Website e.g Registration Forms etc.</li>
+                            <li><span>Cloud Engineer Intern @ Solvyng.io</span>
+                                <br>
+                                •	Developed robust backend applications using Amazon Cognito and IAM for enhanced security.<br>
+                                •	Created intuitive and responsive front-end interfaces with Angular, HTML, CSS, and TypeScript.<br>
+                                •	Built scalable non-relational databases using Amazon S3 and Amazon DB.<br>
+                                •	Managed project tasks and user stories using ADO.<br>
+                                •	Utilized GitHub and GitBash for efficient source code management.<br>
+                                </li>
+                            <li><span> IT Graduate @ MultiChoice</span>
+                                <br>
+                                <span> Development Experience</span><br>
+                                •	Developed multiple utilities in .NET Core to integrate seamlessly with Microsoft Dynamics 365 CRM, enhancing system functionality and improving user experience.<br>
+                                •	Developed and maintained service components using WCF Services, Visual Studio, and Dynamics 365 (CRM) to ensure data integrity and reliability.<br>
+                                •	Utilized Azure DevOps for defect tracking and User Story management, streamlining development processes.<br>
+                                •	Implemented and optimized API procedures using Postman and WCF Test Client.<br>
+                                •	Refactored and modernized a unit test regression suite for Dynamics 365 (CRM) Services, improving code quality.<br>
+                                •	Developed and tested Microsoft Dynamics 365 (CRM) user stories to ensure functional correctness.<br>
+                                •	Created automated C# unit tests using the NUnit framework for Dynamics 365 (CRM) Services.<br>
+                                •	Successfully completed the decoupling of Salesforce for DStv Stream with no reported bugs, ensuring smooth transitions.<br>
+                                •	Validated and upgraded Dynamics 365 (CRM) versions, ensuring compatibility and performance.<br>
+                                •	Developed automated integration tests using the Selenium framework with C#, ensuring comprehensive test coverage.<br>
+                            
+                                <span>Testing Experience</span><br>
+                                •	Created and managed test plans, test cases, and scripts for DStv Stream apps, ensuring robust software functionality.<br>
+                                •	Applied various testing methodologies including functional, regression, and performance testing.<br>
+                                •	Conducted comprehensive service testing using WCF Services, Visual Studio, and Dynamics 365 (CRM) to ensure data integrity and reliability.<br> 
+                                •   Utilized SAP and Salesforce for product and device information management.<br>
+                                •	Performed system integration testing (SIT) to ensure seamless operation of system components.<br>
+                                </li>
                         </ul>
+                    </div>
+                    <div class="tab-contents" id="certifications">
+                        <ul>
+                            <li><span>AWS Certified Cloud Practitioner</span><br>Amazon Web Services Training and Certification </li>
+                            <li><span>Microsoft Azure Fundamentals</span><br>Microsoft</li>
+                            <li><span>ISTQB® Foundation Level Certification</span><br>International Software Testing Qualifications Board </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -159,68 +205,133 @@
         </div>
     </div>
    </div>
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu(){
-            sidemenu.style.right = "0"; 
-        }
-
-        function closemenu(){
-            sidemenu.style.right = "-200px"; 
-        }
-    </script>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw7HFj0HrVpv4R-7VQi5adJ398e2pUZny8hTmLqpVt8RZk1mFPn3x7uCf-Shz9fm_vG/exec';
-    const form = document.forms['submit-to-google-sheet'];
-
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
+   <script>
+       // Tab functionality
+       var tablinks = document.getElementsByClassName("tab-links");
+       var tabcontents = document.getElementsByClassName("tab-contents");
+   
+       function opentab(tabname){
+           for(tablink of tablinks){
+               tablink.classList.remove("active-link");
+           }
+           for(tabcontent of tabcontents){
+               tabcontent.classList.remove("active-tab");
+           }
+           event.currentTarget.classList.add("active-link");
+           document.getElementById(tabname).classList.add("active-tab");
+       }
+   
+       // Menu functionality
+       var sidemenu = document.getElementById("sidemenu");
+   
+       function openmenu(){
+           sidemenu.style.right = "0"; 
+       }
+   
+       function closemenu(){
+           sidemenu.style.right = "-200px"; 
+       }
+   
+       // Form submission
+       const scriptURL = 'https://script.google.com/macros/s/AKfycbw7HFj0HrVpv4R-7VQi5adJ398e2pUZny8hTmLqpVt8RZk1mFPn3x7uCf-Shz9fm_vG/exec';
+       const form = document.forms['submit-to-google-sheet'];
+   
+       form.addEventListener('submit', e => {
+           e.preventDefault();
+           fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+               .then(response => {
+                   if (response.ok) {
+                       return response.json();
+                   }
+                   throw new Error('Network response was not ok.');
+               })
+               .then(data => {
+                   Swal.fire({
+                       title: "Submitted!",
+                       text: "Form has been successfully sent!",
+                       icon: "success"
+                   });
+                   form.reset();
+               })
+               .catch(error => {
+                   Swal.fire({
+                       title: "Error!",
+                       text: "Form was not sent!",
+                       icon: "error"
+                   });
+                   console.error('There was a problem with the fetch operation:', error);
+               });
+       });
+   
+       // Background Animation
+       const backgroundAnimation = document.querySelector('.background-animation');
+       const MAX_ELEMENTS = 50;
+   
+       function createMatrixEffect() {
+        const codeSnippets = [
+            'public class Program {',
+            'static void Main() {',
+            'Console.WriteLine();',
+            'var list = new List<string>();',
+            'async Task<string> Method()',
+            'using System.Linq;',
+            'if (condition) {',
+            'foreach (var item in items)',
+            'public interface IService',
+            'private readonly string _field;',
+            'return await Task.Run();',
+            'new Dictionary<string, int>();',
+            'throw new Exception();',
+            'string[] array = new string[];',
+            '} // end class',
+            'namespace MyApp {',
+            'using var scope = service;',
+            'record Person(string Name);'
+        ];
+    
+        const container = document.querySelector('.background-animation');
+        
+        function createCodeElement() {
+            const code = document.createElement('div');
+            code.className = 'code-text';
+            code.style.position = 'absolute';
+            code.style.left = Math.random() * window.innerWidth + 'px';
+            code.style.top = '-50px';
+            code.style.color = 'rgba(50, 205, 50, 0.7)'; // Brighter green
+            code.style.fontSize = '14px';
+            code.style.fontFamily = 'Consolas, monospace';
+            code.style.whiteSpace = 'nowrap';
+            code.style.userSelect = 'none';
+            code.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+            
+            container.appendChild(code);
+            
+            let pos = -50;
+            const speed = 1 + Math.random() * 2;
+            
+            function fall() {
+                pos += speed;
+                code.style.top = pos + 'px';
+                
+                if (pos < window.innerHeight) {
+                    requestAnimationFrame(fall);
+                } else {
+                    code.remove();
                 }
-                throw new Error('Network response was not ok.');
-            })
-            .then(data => {
-                Swal.fire({
-                    title: "Submitted!",
-                    text: "Form has been successfully sent!",
-                    icon: "success"
-                });
-                form.reset();
-            })
-            .catch(error => {
-                Swal.fire({
-                    title: "Error!",
-                    text: "Form was not sent!",
-                    icon: "error"
-                });
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    });
-</script>
-
-
+            }
+            
+            requestAnimationFrame(fall);
+        }
+        
+        setInterval(createCodeElement, 500); // Create new code snippet every 500ms
+    }
+    
+    // Start the animation when the page loads
+    document.addEventListener('DOMContentLoaded', createMatrixEffect);
+    
+   </script>
+   
 </body>
 </html>
