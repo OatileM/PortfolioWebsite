@@ -14,14 +14,10 @@ body{
     color: #fff;
 }
 
-#header{
+#header {
     width: 100%;
     height: 100vh;
-    background-image: url(images/background.png);
-    background-size:cover;
-    background-position:center;
-    background-repeat: no-repeat;
-    background-position-y: top;
+    background: #080808;
 }
 .container{
     padding: 10px 10%;
@@ -68,10 +64,16 @@ nav ul li a:hover::after{
 width: 100%;
 }
 
-.header-text{
+
+.header-text {
     margin-top: 10%;
-    font-size: 30px;
-    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 .header-text h1{
@@ -80,6 +82,38 @@ width: 100%;
 }
 .header-text h1 span{
     color: #32CD32;
+}
+
+.profile-image {
+    width: 450px; 
+    height: 450px; 
+    border: 2px solid #00ff00; 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content p {
+    color: #00ff00; /* Bright green color */
+    font-size: 40px; /* Increased font size */
+    font-weight: 600; /* Make it bolder */
+    margin-bottom: 20px; /* Space between "Full Stack Developer" and your name */
+}
+
+.text-content h1 {
+    font-size: 60px; /* Adjust this size as needed */
+    margin-top: 0; /* Remove default margin */
 }
 
 /*About */
@@ -96,11 +130,18 @@ width: 100%;
 
 .about-col-1{
     flex-basis: 35%;
+    position: relative;
+    min-width: 300px;
+    height: 500px;
+    margin-bottom: 30px;
 }
 .about-col-1 img{
     width: 100%;
     height: 100%; 
+    object-fit: cover;
     border-radius: 15px; 
+    position: sticky;
+    top: 0;
 }
 
 .about-col-2{
@@ -153,8 +194,8 @@ sub-title{
 
 .tab-contents {
     display: none;
+    position: relative; /* Add this to prevent affecting other elements */
 }
-
 .tab-contents.active-tab{
     display:block;
 }
@@ -358,6 +399,121 @@ form .btn2{
 
 }
 
+/* Background Animation*/
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #080808;
+    overflow: hidden;
+}
+.background-animation::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent;
+    animation: bgAnimation 12s linear infinite;
+    opacity: 0.4; /* Increased from 0.2 to 0.4 for more visibility */
+}
+
+
+@keyframes bgAnimation {
+    0% {
+        transform: rotate(0deg);
+        background-image: linear-gradient(
+            rgba(50, 205, 50, 0.4) 1px, /* Increased opacity */
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(50, 205, 50, 0.4) 1px, /* Increased opacity */
+            transparent 1px
+        );
+        background-size: 30px 30px;
+    }
+    100% {
+        transform: rotate(360deg);
+        background-image: linear-gradient(
+            rgba(50, 205, 50, 0.4) 1px, /* Increased opacity */
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(50, 205, 50, 0.4) 1px, /* Increased opacity */
+            transparent 1px
+        );
+        background-size: 30px 30px;
+    }
+}
+
+.code-text {
+    text-shadow: 0 0 8px rgba(50, 205, 50, 0.8); /* Add glow effect */
+    opacity: 0.8; /* Make text more visible */
+    z-index: -1;
+}
+
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a subtle overlay to improve content readability */
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.7);
+    z-index: 0;
+}
+
+/* Ensure header content stays above the overlay */
+.header-text {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+/* Add animation for header text */
+.header-text {
+    margin-top: 10%;
+    font-size: 30px;
+    margin-left: 25px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Add accessibility consideration */
+@media (prefers-reduced-motion: reduce) {
+    .background-animation::before {
+        animation: none;
+    }
+    .code-text {
+        display: none;
+    }
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
 /*CSS For Small Screens*/
 
 nav .fa-solid{
@@ -410,16 +566,6 @@ nav .fa-solid{
         font-size: 40px;
     }
 
-    .about-col-1, .about-col-2{
-        flex-basis: 100%;
-    }
-
-    .about-col-1{
-        margin-bottom: 30px;
-    }
-    .about-col-2{
-        font-size: 14px;
-    }
 
     .tab-links{
         font-size: 16px;
