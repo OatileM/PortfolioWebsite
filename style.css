@@ -458,7 +458,7 @@ form .btn2{
     z-index: -1;
 }
 
-/* Ensure the container has the right z-index */
+
 .container {
     position: relative;
     z-index: 1;
